@@ -3,6 +3,7 @@ import 'package:islami/ui/home/hadeth/hadeth_tab.dart';
 import 'package:islami/ui/home/quran/quran_tab.dart';
 import 'package:islami/ui/home/radio/radio_tab.dart';
 import 'package:islami/ui/home/tasbeh/tasbeh_tab.dart';
+import 'package:islami/ui/my_theme_data.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = 'Home';
@@ -19,13 +20,12 @@ class _HomeScreenState extends State<HomeScreen> {
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/background.png'),
-            fit: BoxFit.fill,
-
-          )
-      ),
+        image: AssetImage(MyThemeData.themeMode == ThemeMode.light
+            ? 'assets/images/background.png'
+            : 'assets/images/bgdark.png'),
+        fit: BoxFit.fill,
+      )),
       child: Scaffold(
-
         appBar: AppBar(
           title: Text('islami'),
         ),

@@ -123,24 +123,28 @@ class QuranTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Image.asset('assets/images/quran_header.png'),
+        Expanded(
+          child: Image.asset('assets/images/quran_header.png'),
+          flex: 1,
+        ),
         Container(
           width: double.infinity,
           height: 1,
-          color: Theme.of(context).primaryColor,
+          color: Theme.of(context).accentColor,
           margin: EdgeInsets.only(bottom: 4),
         ),
         Text(
           'Verse Name',
-          style: TextStyle(fontSize: 24),
+          style: Theme.of(context).textTheme.headline5,
         ),
         Container(
           width: double.infinity,
           height: 1,
-          color: Theme.of(context).primaryColor,
+          color: Theme.of(context).accentColor,
           margin: EdgeInsets.only(top: 4),
         ),
         Expanded(
+          flex: 3,
           child: ListView.separated(
             itemBuilder: (buildContext, index) {
               return VerseNameWidget(names[index], index);
@@ -150,7 +154,7 @@ class QuranTab extends StatelessWidget {
               return InkWell(
                 onTap: () {},
                 child: Container(
-                  color: Theme.of(context).primaryColor,
+                  color: Theme.of(context).accentColor,
                   width: double.infinity,
                   height: 1,
                   margin: EdgeInsets.symmetric(horizontal: 24),
