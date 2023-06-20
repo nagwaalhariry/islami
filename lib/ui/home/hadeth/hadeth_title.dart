@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:islami/ui/home/hadeth/hadeth.dart';
 
+import '../../hadeth_details/hadeth_details.dart';
+
 class HadethTitleWidget extends StatelessWidget {
   Hadeth hadeth;
 
@@ -9,14 +11,17 @@ class HadethTitleWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
-      child: Container(
-        alignment: Alignment.center,
-        child: Text(
-          hadeth.title,
-          style: Theme.of(context).textTheme.bodyText1,
-        ),
-      ),
-    );
+        onTap: () {
+          Navigator.pushNamed(context, HadethDetailsScreen.routeName,
+              arguments: hadeth);
+        },
+        child: Container(
+            alignment: Alignment.center,
+            child: Text(
+              hadeth.title,
+              style: TextStyle(
+                fontSize: 24,
+              ),
+            )));
   }
 }
