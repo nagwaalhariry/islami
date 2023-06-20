@@ -8,12 +8,13 @@ class HadethTitleWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.center,
-      child: Text(
-        hadeth.title,
-        style: TextStyle(
-          fontSize: 24,
+    return InkWell(
+      onTap: () {},
+      child: Container(
+        alignment: Alignment.center,
+        child: Text(
+          hadeth.title,
+          style: Theme.of(context).textTheme.bodyText1,
         ),
       ),
     );
